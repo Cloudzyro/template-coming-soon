@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+    The words are in this file. The launch date, shop link and form address are
+    in config.js. Colors and fonts are at the top of styles.css.
+  -->
+  <title>Odd Kiln | Our online shop opens December 5</title>
+  <meta name="description" content="Odd Kiln is a two-person pottery studio in Asheville. Our online shop opens December 5 with mugs, bowls and vases from the winter firing. Leave your email to hear first.">
+  <link rel="canonical" href="https://oddkiln.example/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Odd Kiln">
+  <meta property="og:title" content="Odd Kiln: the online shop opens December 5">
+  <meta property="og:description" content="Mugs, bowls and vases from the winter firing. Leave your email to hear first.">
+  <meta property="og:url" content="https://oddkiln.example/">
+  <meta property="og:image" content="https://oddkiln.example/images/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#ece4d8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1613" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="launch">
+    <section class="intro" aria-labelledby="title">
+      <p class="logo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v3c0 1.5 3 3.5 3 8a8 8 0 0 1-16 0c0-4.5 3-6.5 3-8z"/></svg>
+        Odd Kiln
+      </p>
+
+      <div class="copy">
+        <h1 id="title">
+          <span data-before>Our online shop opens December 5</span>
+          <span data-after hidden>The online shop is open</span>
+        </h1>
+        <p class="lede" data-before>Mugs, bowls and vases from the winter firing, made by two potters in a converted garage in Asheville. About 140 pieces, and each one is the only one.</p>
+        <p class="lede" data-after hidden>Mugs, bowls and vases from the winter firing are online now. About 140 pieces, and each one is the only one, so the best glazes go first.</p>
+      </div>
+
+      <div class="countdown" data-before aria-labelledby="countdown-label">
+        <p id="countdown-label" class="countdown-label" data-launch-text>Saturday, December 5 at 10 am Pacific</p>
+        <div class="clock" role="timer" aria-live="off" data-clock>
+          <div><span data-unit="days">10</span><small>days</small></div>
+          <div><span data-unit="hours">00</span><small>hours</small></div>
+          <div><span data-unit="minutes">00</span><small>minutes</small></div>
+          <div><span data-unit="seconds">00</span><small>seconds</small></div>
+        </div>
+        <p class="local-time" data-local-time></p>
+      </div>
+
+      <div class="open-actions" data-after hidden>
+        <a class="button" data-shop-link href="https://shop.oddkiln.example">Visit the shop</a>
+      </div>
+
+      <form class="signup" data-before novalidate>
+        <label for="email">Get one email when the shop opens</label>
+        <div class="signup-row">
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <button class="button" type="submit">Notify me</button>
+        </div>
+        <p class="signup-status" role="status" aria-live="polite">One email on launch day, nothing else.</p>
+      </form>
+
+      <ul class="socials" aria-label="Odd Kiln elsewhere">
+        <li><a href="https://instagram.com/">Instagram</a></li>
+        <li><a href="https://www.pinterest.com/">Pinterest</a></li>
+        <li><a href="mailto:hello@oddkiln.example">hello@oddkiln.example</a></li>
+      </ul>
+    </section>
+
+    <figure class="teaser">
+      <img src="images/kiln-shelf.svg" width="640" height="720" alt="Three stoneware pieces on a kiln shelf: a tall celadon vase, a tenmoku bowl with a rust rim and a white shino mug, with a strip of glaze test tiles below">
+      <figcaption>From the winter firing: celadon, tenmoku and shino</figcaption>
+    </figure>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "template-coming-soon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A coming soon page template with a time-zone aware countdown, email sign-up, social links and a teaser image. Plain HTML, CSS and a little JavaScript.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "serve . --listen 3000"
+  },
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "packageManager": "pnpm@12.10.1",
+  "devDependencies": {
+    "serve": "14.2.4"
+  }
+}

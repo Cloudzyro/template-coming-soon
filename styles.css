@@ -1,0 +1,133 @@
+/* Colors and fonts: change these to make the page yours. */
+:root {
+  --bg: #ece4d8;
+  --card: #f6f1e9;
+  --ink: #241d18;
+  --ink-2: #5f544a;
+  --ink-3: #786c60;
+  --line: rgba(36, 29, 24, 0.12);
+  --accent: #2f5d50;       /* celadon green, darkened for contrast */
+  --accent-hover: #244a40;
+  --on-accent: #ffffff;
+  --font-body: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "DM Serif Display", Georgia, serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1613;
+    --card: #221d19;
+    --ink: #efe8dd;
+    --ink-2: #b3a99c;
+    --ink-3: #908679;
+    --line: rgba(239, 232, 221, 0.1);
+    --accent: #a9c8bb;
+    --accent-hover: #c0d8cd;
+    --on-accent: #16201c;
+    color-scheme: dark;
+  }
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("fonts/sora-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("fonts/dm-serif-display-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.55; overflow-x: clip; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, p { margin: 0; }
+[hidden] { display: none !important; }
+
+.launch {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 64px;
+  align-items: center;
+  width: min(1200px, 100% - 64px);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.intro { display: grid; gap: 32px; align-content: center; }
+.logo { display: inline-flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 500; }
+.logo svg { width: 22px; height: 22px; fill: var(--accent); }
+
+.copy { display: grid; gap: 16px; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 4.6vw, 58px); line-height: 1.04; letter-spacing: -0.02em; text-wrap: balance; max-width: 13ch; }
+.lede { font-size: 18px; line-height: 1.6; color: var(--ink-2); max-width: 32rem; }
+
+/* Countdown: the figures are the moment, set big and tabular */
+.countdown { display: grid; gap: 12px; }
+.countdown-label { font-size: 15px; color: var(--ink-2); }
+.clock { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 480px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.clock > div { display: grid; gap: 4px; padding: 14px 0; }
+.clock > div + div { border-left: 1px solid var(--line); padding-left: 20px; }
+.clock span { font-size: 44px; line-height: 1; font-weight: 300; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.clock small { font-size: 13px; color: var(--ink-3); }
+.local-time { font-size: 14px; color: var(--ink-3); }
+
+/* Sign-up */
+.signup { display: grid; gap: 10px; max-width: 480px; }
+.signup label { font-size: 15px; font-weight: 500; }
+.signup-row { display: flex; gap: 8px; }
+.signup input {
+  flex: 1; min-width: 0; height: 48px; padding: 0 14px;
+  font: inherit; font-size: 16px; color: var(--ink);
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  transition: border-color 150ms var(--ease);
+}
+.signup input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+.signup input[aria-invalid="true"] { border-color: #b3261e; }
+.signup-status { font-size: 14px; color: var(--ink-3); min-height: 22px; }
+.signup.is-fallback .signup-status, .signup.is-done .signup-status { color: var(--ink); }
+
+.button {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  height: 48px; padding: 0 20px; border: 0; border-radius: 10px; cursor: pointer;
+  font: inherit; font-size: 15px; font-weight: 500; text-decoration: none;
+  background: var(--accent); color: var(--on-accent);
+  transition: background-color 150ms var(--ease), transform 120ms var(--ease);
+}
+.button:hover { background: var(--accent-hover); }
+.button:active { transform: scale(0.98); }
+.button:disabled { opacity: 0.6; cursor: progress; }
+
+.socials { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; }
+.socials a { color: var(--ink-2); text-decoration: none; }
+.socials a:hover { color: var(--ink); text-decoration: underline; }
+
+/* Teaser */
+.teaser { margin: 0; display: grid; gap: 12px; }
+.teaser img { width: 100%; max-height: calc(100svh - 140px); object-fit: contain; object-position: center top; border-radius: 20px; }
+.teaser figcaption { font-size: 13px; color: var(--ink-3); }
+
+@media (max-width: 880px) {
+  .launch { grid-template-columns: 1fr; gap: 48px; width: min(1200px, 100% - 32px); padding: 32px 0 48px; }
+  .intro { gap: 32px; }
+  .teaser img { max-height: none; }
+  h1 { max-width: 16ch; }
+}
+@media (max-width: 420px) {
+  .clock > div + div { padding-left: 12px; }
+  .clock span { font-size: 34px; }
+  .signup-row { flex-direction: column; }
+  .signup input { flex: none; }
+  .signup .button { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
